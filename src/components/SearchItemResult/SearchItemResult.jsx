@@ -22,7 +22,7 @@ function SearchItemResult({ products, filters }) {
   const { products: productList, pagination } = products;
   // console.log(products);
   const history = useHistory();
-  // Filters phần sortBy: function này nhận vào 2 tham số là sortBy(view || createdAt || sold || price), order(asc, desc) 
+  // Filters phần sortBy: function này nhận vào 2 tham số là sortBy(view || createdAt || sold || price), order(asc, desc)
   const sortBy = (sortBy, order) => {
     const _filters = { ...filters, sortBy }; // Thêm sortBy vào
     // console.log(_filters);

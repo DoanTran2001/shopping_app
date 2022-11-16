@@ -14,11 +14,11 @@ AuthenticatedGuard.propTypes = {
     PropTypes.arrayOf(PropTypes.element)
   ])
 }
-// Chưa đăng nhập: có thể truy cập vào trang login, register, home, nhưng k thể truy cập vào trang user ==> tạo AuthenticatedGuard để bảo vệ cho user
+// Chưa đăng nhập: có thể truy cập vào trang login, register, home, nhưng k thể truy cập vào trang user ==> tạo AuthenticatedGuard để bảo vệ cho user.
 
 function AuthenticatedGuard({children}) {
   const authenticated = useAuthenticated();
-  // Nếu chưa đăng nhập thì cho về trang đăng nhập đã, còn đăng nhập rồi thì cho hiển thị children
+  // Nếu chưa đăng nhập thì cho về trang đăng nhập đã, còn đăng nhập rồi thì cho hiển thị children.
   if(!authenticated) {
     return <Redirect to={path.login}/>
   }

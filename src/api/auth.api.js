@@ -10,6 +10,7 @@ const authApi = {
   login(data) {
     return http.post('login', data)
   },
+  // logout: Đăng xuất
   logout() {
     return http.post('logout')
   }

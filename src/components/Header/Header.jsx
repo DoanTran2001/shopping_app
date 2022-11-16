@@ -30,7 +30,6 @@ function Header() {
     e.preventDefault();
     history.push(path.home + `?name=${searchValue}`);
   }
-
   return (
     <S.StyleHeader>
       <div className="container">

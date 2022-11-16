@@ -44,8 +44,8 @@ const auth = createSlice({
     unauthorize: (state) => {
       state.profile = {} // reset redux
       // Remove trong localStorage luôn
-      localStorage.removeItem(LocalStorage.user)
-      localStorage.removeItem(LocalStorage.accessToken)
+      localStorage.removeItem(LocalStorage.user) // Xóa user trong localStorage
+      localStorage.removeItem(LocalStorage.accessToken) // Xóa token trong localStorage
     }
   },
   extraReducers: {
@@ -53,7 +53,7 @@ const auth = createSlice({
     // Khi gửi dữ liệu thành công 
     [register.fulfilled]: (state, action) => {
       const { user, access_token } = action.payload.data; // Lấy thông tin user và access_token 
-      console.log(action.payload.data);
+      // console.log(action.payload.data);
       // action.payload: {message: "Đăng ký thành công", data: {...}}
       //action.payload.data: { access_token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlRyYW4xMjNAZ21haWwuY29tIiwiaWQiOiI2MjUyOTIzMTZlYmMwMDFjZjJkZTlkYzAiLCJyb2xlcyI6WyJVc2VyIl0sImNyZWF0ZWRfYXQiOiIyMDIyLTA0LTEwVDA4OjE1OjQ1Ljc1NFoiLCJpYXQiOjE2NDk1Nzg1NDUsImV4cCI6MTY1MDE4MzM0NX0.qgoVix2FQ-5ysjioCNJbJEezg9tCUMmP3tGayon0qBg" , expires: "7d", user: {createdAt: "2022-04-10T08:15:45.715Z", email: "Tran123@gmail.com", roles: ['User'], updatedAt: "2022-04-10T08:15:45.715Z", __v: 0, _id: "625292316ebc001cf2de9dc0"}}
       state.profile = user; // set profile là thông tin user
@@ -79,3 +79,4 @@ const auth = createSlice({
 const authReducer = auth.reducer;
 export const unauthorize = auth.actions.unauthorize;
 export default authReducer;
+
